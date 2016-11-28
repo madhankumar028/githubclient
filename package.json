@@ -1,0 +1,23 @@
+{
+  "name": "githubclient",
+  "version": "1.0.0",
+  "description": "github client to search github users",
+  "main": "server.js",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madhankumar028/githubclient.git"
+  },
+  "keywords": [],
+  "author": "MadhankumarJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madhankumar028/githubclient/issues"
+  },
+  "homepage": "https://github.com/madhankumar028/githubclient#readme",
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  }
+}
