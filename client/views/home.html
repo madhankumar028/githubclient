@@ -1,3 +1,42 @@
-<div class="header">
-    <h1>test</h1>
+<div class="jumbotron">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-3 col-md-offset-1">
+                <img ng-src="{{home.user.avatar_url}}" class="img-circle" alt="">
+            </div>
+            <div class="col-sm-4">
+                <p>
+                    test
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="navbar">
+    <div class="row">
+        <ul>
+            <li>
+                <a ui-sref="home">Post</a>
+            </li>
+            <li>
+                <a ui-sref="about" ui-sref-active="active">About</a>
+            </li>
+            <li>
+                <a ui-sref="#">Pet Projects</a>
+            </li>
+            <li>
+                <a ui-sref="#">ngStyleguide</a>
+            </li>
+            <li>
+                <a ui-sref="#">Post</a>
+            </li>
+            <li>
+                <a ui-sref="#">Post</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div>
+    <input type="text" ng-model="userName" />
+    <button type="button" name="button" ng-click="HomeCtrl.getUserDetails(userName)">submit</button>
 </div>
