@@ -11,18 +11,25 @@
     function HomeCtrl(HomeService, APP_CONFIG) {
 
         var self = this;
-        var home = {};
         var defaultUserName = APP_CONFIG.defaultUser;
 
-        self.getUserDetails = getUserDetails;
+        self.home = {};
+        self.getUserData = getUserData;
 
-        function getUserDetails(userName) {
-            HomeService.getUserDetails(userName, function(err, data){
-                home.user = data;
-                console.log(home);
-            });
+        function getUserData(userName) {
+            if(!userName){
+                return;
+            }
+            userData(userName);
         }
+        userData(defaultUserName);
 
-        HomeService.getUserDetails(defaultUserName);
+        function userData(userName) {
+            var userDetails = HomeService.getUserDetails(userName);
+            userDetails.then(function (response) {
+                self.home = response;
+                console.log(self.home);
+            })
+        }
     }
 })();

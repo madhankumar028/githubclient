@@ -1,4 +1,4 @@
-(function () {
+  (function () {
 
     'use strict';
 
@@ -16,7 +16,6 @@
          * get the userDetails
          *
          * @param {String} userName
-         * @param {String} password
          *
          *
          * @returns {Promise} Returns a promise
@@ -32,11 +31,11 @@
             deferred = $q.defer();
 
             $http(options)
-            .success(function (data, headers, config, status) {
-                deferred.resolve(data);
-                console.log(data);
+            .success(function (response, status, header, config) {
+                deferred.resolve(response);
+                console.log(response);
             })
-            .error(function (status, headers, config, data) {
+            .error(function (response, status, header, config) {
 
             });
 
