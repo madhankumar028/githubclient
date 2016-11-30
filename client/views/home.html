@@ -2,44 +2,55 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-sm-3 col-md-offset-1">
-                <!-- <img ng-src="{{HomeCtrl.home.avatar_url}}" class="img-circle" alt=""> -->
-                <p>
-                    {{HomeCtrl.home.name}}
-                </p>
+                <img ng-src="{{HomeCtrl.home.avatar_url}}" class="img-circle" alt="">
             </div>
             <div class="col-sm-4">
                 <p>
-                    test
+                    {{HomeCtrl.home.bio}}
                 </p>
+            </div>
+        </div>
+        <div class="row" ng-if="HomeCtrl.error">
+            <div class="col-sm-3 col-md-offset-1">
+                <p>{{HomeCtrl.home.error}}</p>
             </div>
         </div>
     </div>
 </div>
 <div class="navbar">
-    <div class="row">
+    <div class="col-sm-12 row">
         <ul>
             <li>
-                <a ui-sref="home">Post</a>
+                <a ui-sref="home">GithubResume</a>
             </li>
             <li>
-                <a ui-sref="about" ui-sref-active="active">About</a>
+                <a ui-sref="about">Fork</a>
             </li>
             <li>
-                <a ui-sref="#">Pet Projects</a>
+                <a ui-sref="#">Pinned</a>
             </li>
             <li>
-                <a ui-sref="#">ngStyleguide</a>
-            </li>
-            <li>
-                <a ui-sref="#">Post</a>
-            </li>
-            <li>
-                <a ui-sref="#">Post</a>
+                <a ui-sref="#">Starred</a>
             </li>
         </ul>
     </div>
 </div>
-<div>
-    <input type="text" ng-model="userName" />
-    <button type="button" name="button" ng-click="HomeCtrl.getUserData(userName)">submit</button>
+<div class="col-sm-4 col-sm-offset-4">
+    <form class="form-group" ng-submit="HomeCtrl.getUserData(userName)">
+        <input type="text" class="input" ng-model="userName" placeholder="Search users ..." />
+    </form>
+</div>
+<div class="resumeReporter">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="label label-primary">{{ HomeCtrl.home.public_repos }} Repos</span>
+                    <span class="label label-success">{{ HomeCtrl.home.public_gists }} Public Gists</span>
+                    <span class="label label-info">{{ HomeCtrl.home.followers }} Followers</span>
+                    <span class="label label-danger">{{ HomeCtrl.home.following }} Following</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
