@@ -1,10 +1,10 @@
 <div class="jumbotron">
     <div class="container text-center">
         <div class="row">
-            <div class="col-sm-3 col-md-offset-1">
+            <div class="avatar">
                 <img ng-src="{{HomeCtrl.home.avatar_url}}" class="img-circle" alt="">
             </div>
-            <div class="col-sm-4">
+            <div class="bio">
                 <p>
                     {{HomeCtrl.home.bio}}
                 </p>
@@ -17,8 +17,8 @@
         </div>
     </div>
 </div>
-<div class="navbar">
-    <div class="col-sm-12 row">
+<nav class="nav">
+    <div class="row">
         <ul>
             <li>
                 <a ui-sref="home">GithubResume</a>
@@ -34,7 +34,7 @@
             </li>
         </ul>
     </div>
-</div>
+</nav>
 <div class="col-sm-4 col-sm-offset-4">
     <form class="form-group" ng-submit="HomeCtrl.getUserData(userName)">
         <input type="text" class="input" ng-model="userName" placeholder="Search users ..." />

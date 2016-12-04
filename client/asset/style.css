@@ -1,22 +1,25 @@
 .jumbotron {
-    margin: 0px;
+    margin-bottom: 0px;
     background-color: #21242c;
     color: #fff;
 }
-.col-sm-3 .img-circle {
-    width: 55%;
-    left: 80px;
-    position: relative;
+.avatar {
+    float: left;
+    margin-left: 10px;
 }
-.col-sm-4 {
+.avatar .img-circle {
+    max-width: 30%;
+    border-radius: 50%;
+    border: 5px solid #35393d;
+}
+.bio {
     padding: 10px 10px;
 }
-.col-sm-4 a {
+.bio p {
     color: #57ad68;
+    text-align: left;
 }
-.navbar {
-    margin: 0px;
-    border-radius: 0px;
+.nav {
     background-color: #2d313a;
     text-align: center;
 }
@@ -24,19 +27,20 @@ ul {
     list-style: none;
     display: block;
 }
-.navbar ul {
+.nav ul {
     margin: 0px;
-    text-decoration: none;
 }
-.navbar li {
+.nav li {
     display: inline-block;
 }
-.navbar a {
+.nav a {
     color: #fff;
     text-decoration: none;
     display: block;
     padding: 24px 30px;
     font-size: 16px;
+}
+@media screen and (min-width) {
 }
 .input {
     width: 103%;
