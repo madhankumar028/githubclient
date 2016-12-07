@@ -1,0 +1,22 @@
+{
+  "name": "githubclient",
+  "description": "github client to search github users",
+  "main": "server.js",
+  "authors": [
+    "MadhankumarJ"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/madhankumar028/githubclient",
+  "dependencies": {
+    "angular": "1.4.0",
+    "angular-ui-router": "0.2.13",
+    "bootstrap": "3.3.4"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
