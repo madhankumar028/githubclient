@@ -13,9 +13,10 @@
 
         var self = this;
         var defaultUserName = APP_CONFIG.defaultUser;
-        var memoize = {};
+        var memoize_User = {};
 
         self.home = {};
+        self.repo = [];
         self.error = false;
         self.getUserData = getUserData;
 
@@ -32,18 +33,26 @@
         function userData(userName) {
 
             // Memoize the already searched users
-            if (memoize[userName+"_data"]) {
-                self.home = memoize[userName+"_data"];
+            if (memoize_User[userName]) {
+                self.home = memoize_User[userName];
                 console.log(memoize);
                 return;
             }
 
             var userDetails = HomeService.getUserDetails(userName);
             userDetails.then(function (response) {
-                memoize[userName+"_data"] = response;
-                console.log(memoize);
+                memoize_User[userName] = response;
                 self.home = response;
-                console.log(self.home);
+            });
+        }
+
+        getUserRepos(defaultUserName);
+
+        function getUserRepos(userName) {
+            var userRepo = HomeService.getUserRepos(userName);
+            userRepo.then(function(response) {
+                self.repo = response;
+                console.log(self.repo);
             });
         }
     }

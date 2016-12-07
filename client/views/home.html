@@ -1,6 +1,7 @@
 <div class="jumbotron">
     <div class="container text-center">
         <div class="row">
+<<<<<<< HEAD
             <div class="avatar">
                 <img ng-src="{{HomeCtrl.home.avatar_url}}" class="img-circle" alt="">
             </div>
@@ -8,6 +9,13 @@
                 <p>
                     {{HomeCtrl.home.bio}}
                 </p>
+=======
+            <div class="col-sm-3 col-md-offset-1">
+                <img ng-src="{{HomeCtrl.home.avatar_url}}" class="img-circle" alt="Pic">
+            </div>
+            <div class="col-sm-4">
+                <p>{{HomeCtrl.home.bio}}</p>
+>>>>>>> 304bb036f7d4ee9a923cb03bd4f81151dbc913b6
             </div>
         </div>
         <div class="row" ng-if="HomeCtrl.error">
@@ -34,23 +42,32 @@
             </li>
         </ul>
     </div>
-</nav>
-<div class="col-sm-4 col-sm-offset-4">
-    <form class="form-group" ng-submit="HomeCtrl.getUserData(userName)">
+</div>
+<div class="content">
+    <form class="search" ng-submit="HomeCtrl.getUserData(userName)">
         <input type="text" class="input" ng-model="userName" placeholder="Search users ..." />
     </form>
-</div>
-<div class="resumeReporter">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="label label-primary">{{ HomeCtrl.home.public_repos }} Repos</span>
-                    <span class="label label-success">{{ HomeCtrl.home.public_gists }} Public Gists</span>
-                    <span class="label label-info">{{ HomeCtrl.home.followers }} Followers</span>
-                    <span class="label label-danger">{{ HomeCtrl.home.following }} Following</span>
-                </div>
-            </div>
+    <div class="resumeReporter">
+        <div class="repo_details">
+            <span class="label label-primary">{{ HomeCtrl.home.public_repos }} Repos</span>
+            <span class="label label-info">{{ HomeCtrl.home.followers }} Followers</span>
+            <span class="label label-danger">{{ HomeCtrl.home.following }} Following</span>
+        </div>
+        <div class="profile">
+            <ul>
+                <li class="list-group-item"><strong>Name: </strong>{{HomeCtrl.home.name}}</li>
+                <li class="list-group-item"><strong>Email: </strong>{{HomeCtrl.home.email}}</li>
+                <li class="list-group-item"><strong>Location: </strong>{{HomeCtrl.home.location}}</li>
+                <li class="list-group-item"><strong>Company: </strong>{{HomeCtrl.home.company}}</li>
+            </ul>
+        </div>
+        <div class="repos">
+            <h3>UserRepositories</h3>
+            <table>
+                <tr ng-repeat="repo in HomeCtrl.repo">
+                    <td>{{repo.name}}</td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>
