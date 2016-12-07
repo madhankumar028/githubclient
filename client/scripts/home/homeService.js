@@ -33,7 +33,6 @@
             $http(options)
             .success(function (response, status, header, config) {
                 deferred.resolve(response);
-                console.log(response);
             })
             .error(function (response, status, header, config) {
                 deferred.reject('Error getting the user details');

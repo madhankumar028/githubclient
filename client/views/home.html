@@ -45,19 +45,30 @@
         </div>
         <div class="profile">
             <ul>
-                <li class="list-group-item"><strong>Name: </strong>{{HomeCtrl.home.name}}</li>
-                <li class="list-group-item"><strong>Email: </strong>{{HomeCtrl.home.email}}</li>
-                <li class="list-group-item"><strong>Location: </strong>{{HomeCtrl.home.location}}</li>
-                <li class="list-group-item"><strong>Company: </strong>{{HomeCtrl.home.company}}</li>
+                <li ng-show="HomeCtrl.home.name" class="list-group-item">
+                    <strong>Name: </strong>{{HomeCtrl.home.name}}
+                </li>
+                <li ng-show="HomeCtrl.home.email" class="list-group-item">
+                    <strong>Email: </strong>{{HomeCtrl.home.email}}
+                </li>
+                <li ng-show="HomeCtrl.home.location" class="list-group-item">
+                    <strong>Location: </strong>{{HomeCtrl.home.location}}
+                </li>
+                <li ng-show="HomeCtrl.home.company" class="list-group-item">
+                    <strong>Company: </strong>{{HomeCtrl.home.company}}
+                </li>
             </ul>
         </div>
         <div class="repos">
             <h3>UserRepositories</h3>
-            <table>
-                <tr ng-repeat="repo in HomeCtrl.repo">
-                    <td>{{repo.name}}</td>
-                </tr>
-            </table>
+            <ul>
+                <li class="list-group-item" ng-repeat="repo in HomeCtrl.repo">
+                    <strong ng-show="repo.language">{{repo.language}}: </strong>{{repo.name}}
+                </li>
+            </ul>
         </div>
+        <!-- <canvas id="doughnut" class="chart chart-doughnut"
+            char-data="data" chart-labels="labels">
+        </canvas> -->
     </div>
 </div>
