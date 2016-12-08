@@ -72,6 +72,7 @@
             userRepo.then(function(response) {
                 memoize_Repo[userName+"_Repo"] = response;
                 self.repo = response;
+                console.log(self.repo);
             });
         }
     }

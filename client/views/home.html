@@ -63,8 +63,8 @@
             <h3>UserRepositories <span class="badge">{{HomeCtrl.home.public_repos}}</span></h3>
             <ul>
                 <li class="list-group-item" ng-repeat="repo in HomeCtrl.repo">
-                    <strong ng-show="repo.name">{{repo.name}}</strong>
-                    <span ng-show="repo.language" class="badge">{{repo.language}}</span>
+                    <strong ng-show="repo.name">{{::repo.name}}</strong><span>: {{::repo.description}}</span>
+                    <span ng-show="repo.language" class="badge">{{::repo.language}}</span>
                 </li>
             </ul>
         </div>
