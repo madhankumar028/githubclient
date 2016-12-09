@@ -46,16 +46,16 @@
         </div>
         <div class="profile">
             <ul>
-                <li ng-show="HomeCtrl.home.name" class="list-group-item">
+                <li ng-if="HomeCtrl.home.name" class="list-group-item">
                     <strong>Name: </strong>{{HomeCtrl.home.name}}
                 </li>
-                <li ng-show="HomeCtrl.home.email" class="list-group-item">
+                <li ng-if="HomeCtrl.home.email" class="list-group-item">
                     <strong>Email: </strong>{{HomeCtrl.home.email}}
                 </li>
-                <li ng-show="HomeCtrl.home.location" class="list-group-item">
+                <li ng-if="HomeCtrl.home.location" class="list-group-item">
                     <strong>Location: </strong>{{HomeCtrl.home.location}}
                 </li>
-                <li ng-show="HomeCtrl.home.company" class="list-group-item">
+                <li ng-if="HomeCtrl.home.company" class="list-group-item">
                     <strong>Company: </strong>{{HomeCtrl.home.company}}
                 </li>
             </ul>
@@ -64,8 +64,8 @@
             <h3>UserRepositories <span class="badge">{{HomeCtrl.home.public_repos}}</span></h3>
             <ul>
                 <li class="list-group-item" ng-repeat="repo in HomeCtrl.repo">
-                    <strong ng-show="repo.name">{{::repo.name}}</strong><span>: {{::repo.description}}</span>
-                    <span ng-show="repo.language" class="badge">{{::repo.language}}</span>
+                    <strong ng-if="repo.name">{{::repo.name}}</strong><span>: {{::repo.description}}</span>
+                    <span ng-if="repo.language" class="badge">{{::repo.language}}</span>
                 </li>
             </ul>
         </div>
