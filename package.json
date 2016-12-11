@@ -19,6 +19,7 @@
   "homepage": "https://github.com/madhankumar028/githubclient#readme",
   "devDependencies": {
     "lite-server": "^2.2.2",
-    "parse-server": "latest"
+    "parse-server": "latest",
+    "express": "latest"
   }
 }
