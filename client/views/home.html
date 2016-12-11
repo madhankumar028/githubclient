@@ -1,10 +1,10 @@
 <div class="jumbotron">
     <div class="container text-center">
         <div class="row">
-            <div class="col-sm-3 col-md-offset-1">
+            <div class="col-md-4 col-xs-4 col-md-offset-1">
                 <img ng-src="{{HomeCtrl.home.avatar_url}}" class="img-circle" alt="Pic">
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4 col-xs-4 bio">
                 <p>{{HomeCtrl.home.bio}}</p>
             </div>
         </div>
@@ -42,32 +42,39 @@
             <span class="label label-primary">{{ HomeCtrl.home.public_repos }} Repos</span>
             <span class="label label-info">{{ HomeCtrl.home.followers }} Followers</span>
             <span class="label label-danger">{{ HomeCtrl.home.following }} Following</span>
-            <a href="{{HomeCtrl.home.html_url}}" class="btn btn-primary pull-right">Visit Profile</a>
+            <a href="{{HomeCtrl.home.html_url}}" class="tag tag-primary pull-right">Visit Profile</a>
         </div>
-        <div class="profile">
-            <ul>
-                <li ng-if="HomeCtrl.home.name" class="list-group-item">
-                    <strong>Name: </strong>{{HomeCtrl.home.name}}
-                </li>
-                <li ng-if="HomeCtrl.home.email" class="list-group-item">
-                    <strong>Email: </strong>{{HomeCtrl.home.email}}
-                </li>
-                <li ng-if="HomeCtrl.home.location" class="list-group-item">
-                    <strong>Location: </strong>{{HomeCtrl.home.location}}
-                </li>
-                <li ng-if="HomeCtrl.home.company" class="list-group-item">
-                    <strong>Company: </strong>{{HomeCtrl.home.company}}
-                </li>
-            </ul>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Profile</div>
+            <div class="panel-body">
+                <ul>
+                    <li ng-if="HomeCtrl.home.name" class="list-group-item">
+                        <strong>Name: </strong>{{HomeCtrl.home.name}}
+                    </li>
+                    <li ng-if="HomeCtrl.home.email" class="list-group-item">
+                        <strong>Email: </strong>{{HomeCtrl.home.email}}
+                    </li>
+                    <li ng-if="HomeCtrl.home.location" class="list-group-item">
+                        <strong>Location: </strong>{{HomeCtrl.home.location}}
+                    </li>
+                    <li ng-if="HomeCtrl.home.company" class="list-group-item">
+                        <strong>Company: </strong>{{HomeCtrl.home.company}}
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="repos">
-            <h3>UserRepositories <span class="badge">{{HomeCtrl.home.public_repos}}</span></h3>
-            <ul>
-                <li class="list-group-item" ng-repeat="repo in HomeCtrl.repo">
-                    <strong ng-if="repo.name">{{::repo.name}}</strong><span>: {{::repo.description}}</span>
-                    <span ng-if="repo.language" class="badge">{{::repo.language}}</span>
-                </li>
-            </ul>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                UserRepositories <span class="badge">{{HomeCtrl.home.public_repos}}</span>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li class="list-group-item" ng-repeat="repo in HomeCtrl.repo">
+                        <strong ng-if="repo.name">{{::repo.name}}</strong><span>: {{::repo.description}}</span>
+                        <span ng-if="repo.language" class="badge">{{::repo.language}}</span>
+                    </li>
+                </ul>
+            </div>
         </div>
         <!-- <canvas id="doughnut" class="chart chart-doughnut"
             char-data="data" chart-labels="labels">
