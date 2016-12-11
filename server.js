@@ -1,18 +1,9 @@
-var fs    = require('fs'),
-    http  = require('http');
+var express = require('express');
+var app = express();
 
-http.createServer(function (request, response) {
-    fs.createReadStream('${__dirname}/index.html'}.pipe(response);
-}).listen(8000 || process.env.PORT);
+app.use(express.static(__dirname + '/index.html'));
 
-console.log('Listening on port 8000.');
-
-// var express = require('express');
-// var app = express();
-//
-// app.use(express.static(__dirname + '/index.html'));
-//
-// var server = app.listen(process.env.port || 80, function () {
-//   var port = server.address().port;
-//   console.log('Listening at port ' + port);
-// });
+var server = app.listen(process.env.port || 80, function () {
+  var port = server.address().port;
+  console.log('Listening at port ' + port);
+});
