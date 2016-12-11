@@ -18,9 +18,11 @@
     "url": "https://github.com/madhankumar028/githubclient/issues"
   },
   "homepage": "https://github.com/madhankumar028/githubclient#readme",
+  "dependencies": {
+      "express": "latest"
+  },
   "devDependencies": {
     "lite-server": "^2.2.2",
-    "parse-server": "latest",
     "express": "latest"
   }
 }
