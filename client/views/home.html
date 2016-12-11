@@ -4,13 +4,11 @@
             <div class="col-md-4 col-xs-4 col-md-offset-1">
                 <img ng-src="{{HomeCtrl.home.avatar_url}}" class="img-circle" alt="Pic">
             </div>
-            <div class="col-md-4 col-xs-4 bio">
+            <div class="col-md-4 col-xs-4 bio" ng-if="HomeCtrl.home.bio">
                 <p>{{HomeCtrl.home.bio}}</p>
             </div>
-        </div>
-        <div class="row" ng-if="HomeCtrl.error">
-            <div class="col-sm-3 col-md-offset-1">
-                <p>{{HomeCtrl.home.error}}</p>
+            <div class="col-md-4 col-xs-4 bio" ng-if="!HomeCtrl.home.bio">
+                <p>{{HomeCtrl.home.login}}'s Github details</p>
             </div>
         </div>
     </div>
@@ -42,9 +40,11 @@
             <span class="label label-primary">{{ HomeCtrl.home.public_repos }} Repos</span>
             <span class="label label-info">{{ HomeCtrl.home.followers }} Followers</span>
             <span class="label label-danger">{{ HomeCtrl.home.following }} Following</span>
-            <a href="{{HomeCtrl.home.html_url}}" class="tag tag-primary pull-right">Visit Profile</a>
+            <a href="{{HomeCtrl.home.html_url}}" class="tag tag-primary pull-right">
+                <span class="label label-primary">Visit Profile</span>
+            </a>
         </div>
-        <div class="panel panel-primary">
+        <div class="panel panel-primary" ng-if="HomeCtrl.home.name">
             <div class="panel-heading">Profile</div>
             <div class="panel-body">
                 <ul>

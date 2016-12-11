@@ -63,6 +63,7 @@
             userDetails.then(function (response) {
                 memoize_User[userName] = response;
                 self.home = response;
+                console.log(self.home);
             });
             getUserRepos(userName);
         }

@@ -66,6 +66,9 @@ ul {
 .repo_details {
     padding: 10px;
 }
+.repo_details a {
+    text-decoration: none;
+}
 .profile {
     margin: 25px 0px 0px 5px;
 }
