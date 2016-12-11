@@ -4,7 +4,8 @@
   "description": "github client to search github users",
   "main": "server.js",
   "scripts": {
-    "dev": "lite-server"
+    "dev": "lite-server",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
