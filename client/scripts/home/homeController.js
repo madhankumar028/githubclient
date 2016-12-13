@@ -4,25 +4,10 @@
 
     angular
     .module('app.home', [])
-    // .config(config)
     .controller('HomeController', HomeCtrl);
 
     // injecting the service and constant
     HomeCtrl.$inject = ['HomeService', 'APP_CONFIG'];
-
-    // function config(chartJsProvider) {
-
-    //     ChartJsProvider.setOptions({ colors : [
-    //
-    //                     '#803690', // Blue
-    //                     '#00ADF9', // Light grey
-    //                     '#DCDCDC', // Red
-    //                     '#46BFBD', // Green
-    //                     '#FDB45C', // Yellow
-    //                     '#949FB1', // Grey
-    //                     '#4D5360'  // Dark Grey
-    //                     ]});
-    // }
 
     function HomeCtrl(HomeService, APP_CONFIG) {
 
@@ -35,9 +20,6 @@
         self.repo = [];
         self.error = false;
         self.getUserData = getUserData;
-
-        // $scope.data = ['test', 'test'];
-        // $scope.label = [2, 100];
 
         function getUserData(userName) {
             if(!userName){
