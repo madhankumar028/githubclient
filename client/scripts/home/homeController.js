@@ -55,7 +55,6 @@
             if (memoize_User[userName] && memoize_Repo[userName+"_Repo"]) {
                 self.home = memoize_User[userName];
                 self.repo = memoize_Repo[userName+"_Repo"];
-                console.log(memoize_User);
                 return;
             }
 
@@ -63,7 +62,6 @@
             userDetails.then(function (response) {
                 memoize_User[userName] = response;
                 self.home = response;
-                console.log(self.home);
             });
             getUserRepos(userName);
         }
@@ -73,7 +71,6 @@
             userRepo.then(function(response) {
                 memoize_Repo[userName+"_Repo"] = response;
                 self.repo = response;
-                console.log(self.repo);
             });
         }
     }
