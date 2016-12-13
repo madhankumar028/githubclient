@@ -14,8 +14,7 @@
 
                     /* Features */
                     'app.constant',
-                    'app.home',
-                    'app.about'
+                    'app.home'
                     ])
 
     /**
@@ -39,7 +38,7 @@
             name: 'about',
             url: '/about',
             templateUrl: 'views/about.html',
-            controller: 'AboutController as AboutCtrl'
+            controller: 'HomeController as HomeCtrl'
         });
 
         $urlRouterProvider.otherwise('/home');
