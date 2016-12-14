@@ -43,4 +43,4 @@
 
         $urlRouterProvider.otherwise('/home');
     });
-})();
+}());

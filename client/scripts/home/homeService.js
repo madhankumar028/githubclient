@@ -1,4 +1,4 @@
-  (function () {
+(function () {
 
     'use strict';
 
@@ -69,4 +69,4 @@
             return deferred.promise;
         }
     }
-})();
+}());
