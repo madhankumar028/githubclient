@@ -31,14 +31,16 @@
             },
             deferred = $q.defer();
 
-            $http(options)
-            .success(function (response, status, header, config) {
-                deferred.resolve(response);
-            })
-            .error(function (response, status, header, config) {
-                deferred.reject('Error getting the user details');
-            });
+            function handleSuccess(data, status, headers, config) {
+                deferred.resolve(data, status, headers, config);
+            }
 
+            function handleError(data, status, headers, config) {
+                deferred.reject(data, status, headers, config);
+            }
+
+            $http(options).success(handleSuccess).error(handleError);
+            
             return deferred.promise;
         }
 
@@ -60,13 +62,15 @@
             },
             deferred = $q.defer();
 
-            $http(options)
-            .success(function (response, status, header, config) {
-                deferred.resolve(response);
-            })
-            .error(function (response, status, header, config) {
-                deferred.reject('Error getting the user repos');
-            });
+            function handleSuccess(data, status, headers, config) {
+                deferred.resolve(data, status, headers, config);
+            }
+
+            function handleError(data, status, headers, config) {
+                deferred.reject(data, status, headers, config);
+            }
+
+            $http(options).success(handleSuccess).error(handleError);
 
             return deferred.promise;
         }
