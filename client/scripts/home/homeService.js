@@ -26,6 +26,7 @@
             var options = {
                 url: APP_CONFIG.endpoint + userName + "?" + apikey,
                 method: 'GET',
+                cache: true,
                 headers: {'content-type': 'application/json'}
             },
             deferred = $q.defer();
@@ -54,6 +55,7 @@
             var options = {
                 url: APP_CONFIG.endpoint + userName + "/repos",
                 method: 'GET',
+                cache: true,
                 headers: {'content-type': 'application/json'}
             },
             deferred = $q.defer();
