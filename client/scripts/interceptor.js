@@ -24,14 +24,6 @@
                 }
 
                 return response || $q.when(response);
-            },
-            responseError: function (response) {
-                if (!(--loadings)) {
-                    // Hide loader
-                    $rootScope.$broadcast("loader_hide");
-                }
-
-                return $q.reject(response);
             }
         };
     }

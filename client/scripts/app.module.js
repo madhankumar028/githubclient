@@ -29,17 +29,25 @@
     */
     .config(function ($httpProvider, $urlRouterProvider, $stateProvider) {
 
-        $httpProvider.interceptors.push('httpInterceptor');
         $stateProvider.state('home', {
             name: 'home',
             url: '/home',
             templateUrl: 'views/home.html',
-            controller: 'HomeController as HomeCtrl'
-            // resolve: {
-            //     getDefaultUser: function (HomeService) {
-            //         return HomeService.
-            //     }
-            // }
+            controller: 'HomeController as HomeCtrl',
+            resolve: {
+                getDefaultUser: function (HomeService, APP_CONFIG) {
+                    var defaultUser = APP_CONFIG.defaultUser;
+                    return HomeService.getUserDetails(defaultUser).then(function(response) {
+                        return response;
+                    });
+                },
+                getUserRepo: function (HomeService, APP_CONFIG) {
+                    var defaultUser = APP_CONFIG.defaultUser;
+                    return HomeService.getUserRepos(defaultUser).then(function(response) {
+                        return response;
+                    });
+                }
+            }
         }).state('about', {
             name: 'about',
             url: '/about',
@@ -48,5 +56,6 @@
         });
 
         $urlRouterProvider.otherwise('/home');
+        $httpProvider.interceptors.push('httpInterceptor');
     });
 }());

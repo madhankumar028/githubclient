@@ -7,15 +7,14 @@
     .controller('HomeController', HomeCtrl);
 
     // injecting the service and constant
-    HomeCtrl.$inject = ['HomeService', 'APP_CONFIG'];
+    HomeCtrl.$inject = ['HomeService', 'APP_CONFIG', 'getDefaultUser', 'getUserRepo'];
 
-    function HomeCtrl(HomeService, APP_CONFIG) {
+    function HomeCtrl(HomeService, APP_CONFIG, getDefaultUser, getUserRepo) {
 
         var self = this;
-        var defaultUserName = APP_CONFIG.defaultUser;
 
-        self.home = {};
-        self.repo = [];
+        self.home = getDefaultUser;
+        self.repo = getUserRepo;
         self.error = false;
         self.getUserData = getUserData;
 
@@ -25,14 +24,10 @@
                 self.home.error = "Enter the username and search for it";
                 return;
             }
-
             userData(userName);
         }
 
-        userData(defaultUserName);
-
         function getAllUser() {
-
             var users = HomeService.getAllUser();
             users.then(function (response) {
                 var options = '';
@@ -49,7 +44,6 @@
             var userDetails = HomeService.getUserDetails(userName);
             userDetails.then(function (response) {
                 self.home = response;
-
             });
             getUserRepos(userName);
         }
