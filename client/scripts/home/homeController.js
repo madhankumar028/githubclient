@@ -25,10 +25,25 @@
                 self.home.error = "Enter the username and search for it";
                 return;
             }
+
             userData(userName);
         }
 
         userData(defaultUserName);
+
+        function getAllUser() {
+
+            var users = HomeService.getAllUser();
+            users.then(function (response) {
+                var options = '';
+                for(var i = 0; i < response.length; i++) {
+                    options += '<option value="'+response[i].login+'" />';
+                    document.getElementById('userList').innerHTML = options;
+                }
+            });
+        }
+
+        getAllUser();
 
         function userData(userName) {
             var userDetails = HomeService.getUserDetails(userName);

@@ -12,46 +12,47 @@
     .module('app', [])
     .component('searchComponent', {
         template: `
-        <form class="search" ng-submit="$ctrl.search(userName)">
-        <input type="text" class="input" ng-model="userName" placeholder="Search Github users ..." />
+        <form class="search" ng-submit="$ctrl.getUserData(userName)">
+            <input type="text" class="input" ng-model="userName" placeholder="Search Github users ..." />
         </form>
         `,
-        controller: function (HomeService, APP_CONFIG) {
-
-            this.inject = ['HomeService'];
-
-            var defaultUserName = APP_CONFIG.defaultUser;
-
-            this.$onInit = function () {
-                search(defaultUserName);
-            };
-
-            function search(userName) {
-                var userDetails = HomeService.getUserDetails(userName);
-                userDetails.then(function (response) {
-                    this.home = response;
-                });
-            }
-        }
+        controller: searchController
     });
 
-    // function searchComponent() {
-    //     return {
-    //         controller: function (HomeService) {
-    //             this.inject = ['HomeService'];
-    //             function search() {
-    //                 var userDetails = HomeService.getUserDetails(userName);
-    //                 userDetails.then(function (response) {
-    //                     this.home = response;
-    //                 });
-    //             }
-    //         },
-    //
-    //         template: `
-    //         <form class="search" ng-submit="$ctrl.search()">
-    //         <input type="text" class="input" ng-model="userName" placeholder="Search Github users ..." />
-    //         </form>
-    //         `
-    //     }
-    // }
+    function searchController(HomeService, APP_CONFIG) {
+
+        var self = this;
+        var defaultUserName = APP_CONFIG.defaultUser;
+
+        self.home = {};
+        self.repo = [];
+        self.error = false;
+        self.getUserData = getUserData;
+
+        function getUserData(userName) {
+            if(!userName){
+                self.error = true;
+                self.home.error = "Enter the username and search for it";
+                return;
+            }
+            userData(userName);
+        }
+
+        userData(defaultUserName);
+
+        function userData(userName) {
+            var userDetails = HomeService.getUserDetails(userName);
+            userDetails.then(function (response) {
+                self.home = response;
+            });
+            getUserRepos(userName);
+        }
+
+        function getUserRepos(userName) {
+            var userRepo = HomeService.getUserRepos(userName);
+            userRepo.then(function(response) {
+                self.repo = response;
+            });
+        }
+    }
 })();

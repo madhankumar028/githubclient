@@ -10,6 +10,7 @@
     .module('app.constant', [])
     .constant('APP_CONFIG', {
         'endpoint'      : '//api.github.com/users/',
+        'all'           : '//api.github.com/users',
         'defaultUser'   : 'madhankumar028',
         'repoCount'     : 10,
         'client_id'     : 'b7641fc061fbc7eba0ae',

@@ -28,7 +28,8 @@
 <div class="content">
     <!-- <search-component></search-component> -->
     <form class="search" ng-submit="HomeCtrl.getUserData(userName)">
-        <input type="text" class="input" ng-model="userName" placeholder="Search Github users ..." />
+        <input type="text" id="value" class="input" list="userList" ng-model="userName" placeholder="Search Github users ..." />
+        <datalist id="userList"></datalist>
     </form>
     <div class="resumeReporter">
         <div class="repo_details">

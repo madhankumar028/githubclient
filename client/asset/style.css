@@ -57,6 +57,9 @@ ul {
     padding: 8px 15px;
     font-size: 20px;
 }
+.userList{
+    display: none;
+}
 .resumeReporter {
     margin: 10px 320px 0px 320px;
     border-radius: 2px;
