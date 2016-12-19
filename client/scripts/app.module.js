@@ -27,13 +27,19 @@
     * @requires $stateProvider
     *
     */
-    .config(function ($urlRouterProvider, $stateProvider) {
+    .config(function ($httpProvider, $urlRouterProvider, $stateProvider) {
 
+        $httpProvider.interceptors.push('httpInterceptor');
         $stateProvider.state('home', {
             name: 'home',
             url: '/home',
             templateUrl: 'views/home.html',
             controller: 'HomeController as HomeCtrl'
+            // resolve: {
+            //     getDefaultUser: function (HomeService) {
+            //         return HomeService.
+            //     }
+            // }
         }).state('about', {
             name: 'about',
             url: '/about',

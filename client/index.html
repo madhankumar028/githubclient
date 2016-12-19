@@ -9,7 +9,9 @@
     </head>
     <body ng-app="app">
         <div ui-view></div>
-
+        <div id="loaderDiv" loader>
+            <img src="asset/ajax-loader.gif" class="ajax-loader"/>
+        </div>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -17,6 +19,8 @@
 
         <script src="scripts/app.module.js"></script>
         <script src="scripts/app.constant.js"></script>
+        <script src="scripts/interceptor.js"></script>
+        <script src="scripts/common/directive/loader.js"></script>
         <!-- <script src="scripts/components/searchComponent.js"></script> -->
         <script src="scripts/home/homeController.js"></script>
         <script src="scripts/home/homeService.js"></script>

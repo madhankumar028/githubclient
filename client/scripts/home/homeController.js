@@ -49,6 +49,7 @@
             var userDetails = HomeService.getUserDetails(userName);
             userDetails.then(function (response) {
                 self.home = response;
+
             });
             getUserRepos(userName);
         }
