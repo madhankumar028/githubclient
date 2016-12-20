@@ -3,7 +3,7 @@ github client to search github users
 
 Live link of the project
 ------------------------
-huntgithubuser.herokuapp.com
+https://huntgithubuser.herokuapp.com
 
 Contributing
 ------------
