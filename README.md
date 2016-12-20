@@ -1,6 +1,9 @@
 # githubclient
 github client to search github users
 
+Live link of the project
+------------------------
+huntgithubuser.herokuapp.com
 
 Contributing
 ------------
