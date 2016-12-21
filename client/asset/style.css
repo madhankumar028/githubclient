@@ -6,21 +6,14 @@
 .col-md-4 .img-circle {
     width: 40%;
     position: relative;
-    left: 110px;
+    left: 100px;
     border: 5px solid #35393d;
 }
-/*.col-xs-4 .img-circle{
-    width: 155%;
-    position: relative;
-    right: auto;
-    border: 5px solid #35393d;
-}*/
-.bio {
+.col-md-4 p {
     padding: 10px;
 }
-.bio p {
-    /*color: #57ad68;*/
-    text-align: left;
+.col-xs-12 p {
+    text-align: center;
 }
 .nav {
     background-color: #2d313a;
