@@ -36,23 +36,16 @@
             controller: 'HomeController as HomeCtrl',
             resolve: {
                 getDefaultUser: function (HomeService, APP_CONFIG) {
-                    var defaultUser = APP_CONFIG.defaultUser;
-                    return HomeService.getUserDetails(defaultUser).then(function(response) {
+                    return HomeService.getUserDetails(APP_CONFIG.defaultUser).then(function(response) {
                         return response;
                     });
                 },
                 getUserRepo: function (HomeService, APP_CONFIG) {
-                    var defaultUser = APP_CONFIG.defaultUser;
-                    return HomeService.getUserRepos(defaultUser).then(function(response) {
+                    return HomeService.getUserRepos(APP_CONFIG.defaultUser).then(function(response) {
                         return response;
                     });
                 }
             }
-        }).state('about', {
-            name: 'about',
-            url: '/about',
-            templateUrl: 'views/about.html',
-            controller: 'HomeController as HomeCtrl'
         });
 
         $urlRouterProvider.otherwise('/home');
