@@ -25,13 +25,15 @@
     *
     * @requires $urlRouterProvider
     * @requires $stateProvider
+    * @requires $locationProvider
     *
     */
-    .config(function ($httpProvider, $urlRouterProvider, $stateProvider) {
+    .config(function ($httpProvider, $urlRouterProvider,
+                    $stateProvider, $locationProvider) {
 
         $stateProvider.state('home', {
-            name: 'home',
-            url: '/home',
+            name: 'profile',
+            url: '/profile',
             templateUrl: 'views/home.html',
             controller: 'HomeController as HomeCtrl',
             resolve: {
@@ -49,8 +51,14 @@
                 }
             }
         });
+        
+        // Default Route
+        $urlRouterProvider.otherwise('/profile');
 
-        $urlRouterProvider.otherwise('/home');
         $httpProvider.interceptors.push('httpInterceptor');
+
+        // HTML5 History API to remove the # tag inside in the url
+        $locationProvider.html5Mode(true);
+
     });
 }());
