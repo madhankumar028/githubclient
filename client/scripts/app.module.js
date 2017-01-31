@@ -36,14 +36,16 @@
             controller: 'HomeController as HomeCtrl',
             resolve: {
                 getDefaultUser: function (HomeService, APP_CONFIG) {
-                    return HomeService.getUserDetails(APP_CONFIG.defaultUser).then(function(response) {
-                        return response;
-                    });
+                    return HomeService.getUserDetails(APP_CONFIG.defaultUser)
+                        .then(function(response) {
+                            return response;
+                        });
                 },
                 getUserRepo: function (HomeService, APP_CONFIG) {
-                    return HomeService.getUserRepos(APP_CONFIG.defaultUser).then(function(response) {
-                        return response;
-                    });
+                    return HomeService.getUserRepos(APP_CONFIG.defaultUser)
+                        .then(function(response) {
+                            return response;
+                        });
                 }
             }
         });

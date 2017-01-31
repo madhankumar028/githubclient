@@ -3,17 +3,14 @@
     background-color: #21242c;
     color: #fff;
 }
-.col-md-4 .img-circle {
+.col-sm-4 .img-circle {
     width: 40%;
     position: relative;
     left: 100px;
     border: 5px solid #35393d;
 }
-.col-md-4 p {
+.col-sm-4 p {
     padding: 10px;
-}
-.col-xs-12 p {
-    text-align: center;
 }
 .nav {
     background-color: #2d313a;
