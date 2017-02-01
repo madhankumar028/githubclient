@@ -16,19 +16,20 @@
                     'app.constant',
                     'app.home'
                     ])
+            .config(Config);
+
+    Config.$inject = ['$httpProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider'];
 
     /**
-    * Default configuration for the application.
-    *
-    *
     * @memberof module:app
     *
+    * Application config phase to handle ui-router states
     * @requires $urlRouterProvider
     * @requires $stateProvider
     * @requires $locationProvider
     *
     */
-    .config(function ($httpProvider, $urlRouterProvider,
+    function Config($httpProvider, $urlRouterProvider,
                     $stateProvider, $locationProvider) {
 
         $stateProvider.state('home', {
@@ -60,5 +61,5 @@
         // HTML5 History API to remove the # tag inside in the url
         $locationProvider.html5Mode(true);
 
-    });
+    };
 }());
