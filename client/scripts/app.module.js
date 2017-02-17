@@ -24,6 +24,7 @@
                     'ui.router',
 
                     /* Features */
+                    'app.login',
                     'app.home'
                     ])
             .config(Config)
@@ -43,7 +44,14 @@
     function Config($httpProvider, $urlRouterProvider,
                     $stateProvider, $locationProvider) {
 
-        $stateProvider.state('home', {
+        $stateProvider
+        .state('login', {
+            name: 'login',
+            url: '/login',
+            templateUrl: 'views/login.html',
+            controller: 'LoginController as LoginCtrl'
+        })
+        .state('home', {
             name: 'profile',
             url: '/profile',
             templateUrl: 'views/home.html',
@@ -65,7 +73,7 @@
         });
         
         // Default Route
-        $urlRouterProvider.otherwise('/profile');
+        $urlRouterProvider.otherwise('/login');
 
         $httpProvider.interceptors.push('httpInterceptor');
 
