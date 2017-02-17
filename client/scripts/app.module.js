@@ -14,11 +14,11 @@
     }
 
     /**
-    * Currently manages all aspects of the application.This will be refactored into
-    * multiple modules later on.
-    *
-    * @module app
-    */
+     * Currently manages all aspects of the application.This will be refactored into
+     * multiple modules later on.
+     *
+     * @module app
+     */
     angular.module('app', [
 
                     'ui.router',
@@ -32,14 +32,14 @@
     Config.$inject = ['$httpProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider'];
 
     /**
-    * @memberof module:app
-    *
-    * Application config phase to handle ui-router states
-    * @requires $urlRouterProvider
-    * @requires $stateProvider
-    * @requires $locationProvider
-    *
-    */
+     * @memberof module:app
+     *
+     * Application config phase to handle ui-router states
+     * @requires $urlRouterProvider
+     * @requires $stateProvider
+     * @requires $locationProvider
+     *
+     */
     function Config($httpProvider, $urlRouterProvider,
                     $stateProvider, $locationProvider) {
 
