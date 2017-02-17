@@ -13,7 +13,7 @@
         self.submit = function submit() {
 
             var options = {
-                url: __env.oAuth + "?" + "client_id=" + __env.clientId + "/",
+                url: __env.oAuth + "?" + "client_id=" + __env.clientId + "&" + "redirect_uri=" + __env.redirectUri,
                 method: 'GET',
                 cache: false,
                 headers: {'content-type': 'application/json'}
@@ -21,7 +21,6 @@
             deferred = $q.defer();
 
             function handleSuccess(data, status, headers, config) {
-                console.log(headers.Location);
                 deferred.resolve(data, status, headers, config);
             }
 

@@ -4,11 +4,11 @@
 
     angular
     .module('app.login', [])
-    .controller('LoginController', LoginCtrl);
+    .controller('LoginController', LoginController);
 
-    LoginCtrl.$inject = ['__env', '$http', '$q', 'LoginService'];
+    LoginController.$inject = ['__env', '$http', '$q', 'LoginService'];
 
-    function LoginCtrl(__env, $http, $q, LoginService) {
+    function LoginController(__env, $http, $q, LoginService) {
         
         var self = this;
 
