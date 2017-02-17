@@ -4,12 +4,7 @@
 
     angular
     .module('app.login', [])
-    .controller('LoginController', LoginCtrl)
-
-    .config(function($httpProvider) {
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    });
+    .controller('LoginController', LoginCtrl);
 
     LoginCtrl.$inject = ['__env', '$http', '$q', 'LoginService'];
 
