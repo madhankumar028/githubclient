@@ -24,7 +24,6 @@
                     'ui.router',
 
                     /* Features */
-                    'app.constant',
                     'app.home'
                     ])
             .config(Config)
@@ -50,7 +49,7 @@
             templateUrl: 'views/home.html',
             controller: 'HomeController as HomeCtrl',
             resolve: {
-                getDefaultUser: function (HomeService, APP_CONFIG, __env) {
+                getDefaultUser: function (HomeService, __env) {
                     return HomeService.getUserDetails(__env.defaultUser)
                         .then(function(response) {
                             return response;
