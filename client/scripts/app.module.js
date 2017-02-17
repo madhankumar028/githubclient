@@ -2,6 +2,16 @@
 
     'use strict';
 
+    var env = {};
+
+    /**
+     * Setting Enviroment variables on window load
+     */
+    if (window) {
+        Object.assign(env, window.__env);
+        console.log(env);
+    }
+
     /**
     * Currently manages all aspects of the application.This will be refactored into
     * multiple modules later on.
@@ -16,7 +26,8 @@
                     'app.constant',
                     'app.home'
                     ])
-            .config(Config);
+            .config(Config)
+            .constant('_env', env);
 
     Config.$inject = ['$httpProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider'];
 
