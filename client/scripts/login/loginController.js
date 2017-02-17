@@ -13,12 +13,13 @@
         var self = this;
 
         self.submit = submit;
+        self.signupPage;
 
         function submit() {
             var oAuthResponse = LoginService.submit();
 
-            oAuthResponse.then(function(res) {
-                console.log(res);
+            oAuthResponse.then(function(response) {
+                self.signupPage = response;
             });
         }
     }

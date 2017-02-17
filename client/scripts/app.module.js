@@ -22,6 +22,7 @@
     angular.module('app', [
 
                     'ui.router',
+                    'ngSanitize',
 
                     /* Features */
                     'app.login',
