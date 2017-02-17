@@ -5,10 +5,10 @@
     angular.module('app.home')
     .service('HomeService', HomeService);
 
-    function HomeService($http, $q, APP_CONFIG) {
+    function HomeService($http, $q, __env) {
 
         var self    = this;
-        var apikey  = "client_id="+APP_CONFIG.client_id+"&client_secret="+APP_CONFIG.client_secret;
+        var apikey  = "client_id=" + __env.clientId + "&client_secret=" + __env.clientSecret;
 
         self.getAllUser     = getAllUser;
         self.getUserDetails = getUserDetails;
@@ -23,9 +23,9 @@
          * @returns {Promise} Returns a promise
          */
         function getAllUser() {
-
+            
             var options = {
-                url: APP_CONFIG.all,
+                url: __env.baseUrl,
                 method: 'GET',
                 cache: true,
                 headers: {'content-type': 'application/json'}
@@ -57,7 +57,7 @@
         function getUserDetails(userName) {
 
             var options = {
-                url: APP_CONFIG.endpoint + userName + "?" + apikey,
+                url: __env.apiUrl + userName + "?" + apikey,
                 method: 'GET',
                 cache: true,
                 headers: {'content-type': 'application/json'}
@@ -88,7 +88,7 @@
         function getUserRepos(userName) {
 
             var options = {
-                url: APP_CONFIG.endpoint + userName + "/repos",
+                url: __env.apiUrl + userName + "/repos",
                 method: 'GET',
                 cache: true,
                 headers: {'content-type': 'application/json'}

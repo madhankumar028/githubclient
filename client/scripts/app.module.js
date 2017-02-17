@@ -9,7 +9,7 @@
      * @requires window Object
      */
     if (window) {
-        Object.assign(env, window.__env);
+        Object.assign(env, window.___env);
         console.log(env);
     }
 
@@ -28,7 +28,7 @@
                     'app.home'
                     ])
             .config(Config)
-            .constant('_env', env);
+            .constant('__env', __env);
 
     Config.$inject = ['$httpProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider'];
 
@@ -50,14 +50,14 @@
             templateUrl: 'views/home.html',
             controller: 'HomeController as HomeCtrl',
             resolve: {
-                getDefaultUser: function (HomeService, APP_CONFIG) {
-                    return HomeService.getUserDetails(APP_CONFIG.defaultUser)
+                getDefaultUser: function (HomeService, APP_CONFIG, __env) {
+                    return HomeService.getUserDetails(__env.defaultUser)
                         .then(function(response) {
                             return response;
                         });
                 },
-                getUserRepo: function (HomeService, APP_CONFIG) {
-                    return HomeService.getUserRepos(APP_CONFIG.defaultUser)
+                getUserRepo: function (HomeService, __env) {
+                    return HomeService.getUserRepos(__env.defaultUser)
                         .then(function(response) {
                             return response;
                         });

@@ -7,9 +7,9 @@
     .controller('HomeController', HomeCtrl);
 
     // injecting the service, constant, resolved functions
-    HomeCtrl.$inject = ['HomeService', 'APP_CONFIG', 'getDefaultUser', 'getUserRepo'];
+    HomeCtrl.$inject = ['HomeService', '__env', 'getDefaultUser', 'getUserRepo'];
 
-    function HomeCtrl(HomeService, APP_CONFIG, getDefaultUser, getUserRepo) {
+    function HomeCtrl(HomeService, __env, getDefaultUser, getUserRepo) {
 
         var self = this;
 
