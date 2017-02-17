@@ -5,7 +5,8 @@
     var env = {};
 
     /**
-     * Setting Enviroment variables on window load
+     * Setting Enviroment variables for default config on window
+     * @requires window Object
      */
     if (window) {
         Object.assign(env, window.__env);
