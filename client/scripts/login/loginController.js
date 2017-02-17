@@ -12,10 +12,9 @@
         
         var self = this;
 
-        self.submit = submit();
+        self.submit = submit;
 
         function submit() {
-
             var oAuthResponse = LoginService.submit();
 
             oAuthResponse.then(function(res) {

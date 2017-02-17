@@ -10,7 +10,9 @@
 
         var self = this;
 
-        self.submit = function submit() {
+        self.submit = submit;
+
+        function submit() {
 
             var options = {
                 url: __env.oAuth + "?" + "client_id=" + __env.clientId + "&" + "redirect_uri=" + __env.redirectUri,
@@ -33,5 +35,4 @@
             return deferred.promise;
         }
     }
-
 }());
