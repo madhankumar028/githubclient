@@ -74,7 +74,7 @@ ul {
     font-weight: bold;
     font-size: 15px;
     text-align: center;
-    color: #4444;
+    color: #444;
 }
 .footer_link a {
     text-decoration: none;
@@ -96,4 +96,8 @@ ul {
    margin-left: -32px; /* -1 * image width / 2 */
    margin-top: -32px; /* -1 * image height / 2 */
    display: block;
+}
+.login .col-sm-6 {
+    margin: 0px;
+    padding: 30px 50px 65px 50px;
 }

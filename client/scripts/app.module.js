@@ -10,20 +10,21 @@
      */
     if (window) {
         Object.assign(env, window.___env);
-        console.log(env);
     }
 
     /**
-    * Currently manages all aspects of the application.This will be refactored into
-    * multiple modules later on.
-    *
-    * @module app
-    */
+     * Currently manages all aspects of the application.This will be refactored into
+     * multiple modules later on.
+     *
+     * @module app
+     */
     angular.module('app', [
 
                     'ui.router',
+                    'ngSanitize',
 
                     /* Features */
+                    'app.login',
                     'app.home'
                     ])
             .config(Config)
@@ -32,18 +33,25 @@
     Config.$inject = ['$httpProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider'];
 
     /**
-    * @memberof module:app
-    *
-    * Application config phase to handle ui-router states
-    * @requires $urlRouterProvider
-    * @requires $stateProvider
-    * @requires $locationProvider
-    *
-    */
+     * @memberof module:app
+     *
+     * Application config phase to handle ui-router states
+     * @requires $urlRouterProvider
+     * @requires $stateProvider
+     * @requires $locationProvider
+     *
+     */
     function Config($httpProvider, $urlRouterProvider,
                     $stateProvider, $locationProvider) {
 
-        $stateProvider.state('home', {
+        $stateProvider
+        .state('login', {
+            name: 'login',
+            url: '/login',
+            templateUrl: 'views/login.html',
+            controller: 'LoginController as LoginCtrl'
+        })
+        .state('home', {
             name: 'profile',
             url: '/profile',
             templateUrl: 'views/home.html',
@@ -65,7 +73,7 @@
         });
         
         // Default Route
-        $urlRouterProvider.otherwise('/profile');
+        $urlRouterProvider.otherwise('/login');
 
         $httpProvider.interceptors.push('httpInterceptor');
 
