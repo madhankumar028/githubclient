@@ -15,3 +15,7 @@ Contributing
 
 I'm still learning from this. For the moment, please restrict your contributions to fixing possible bugs
 or improving existing documents. I'm not yet ready to accept enhancements.
+
+
+##Note:
+Application is in development phase. New version is coming with features likes Login with Github.
