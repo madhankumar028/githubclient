@@ -45,12 +45,12 @@
                     $stateProvider, $locationProvider) {
 
         $stateProvider
-        .state('login', {
+        /*.state('login', {
             name: 'login',
             url: '/login',
             templateUrl: 'views/login.html',
             controller: 'LoginController as LoginCtrl'
-        })
+        })*/
         .state('home', {
             name: 'profile',
             url: '/profile',
@@ -73,7 +73,8 @@
         });
         
         // Default Route
-        $urlRouterProvider.otherwise('/login');
+        // $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/profile');        
 
         $httpProvider.interceptors.push('httpInterceptor');
 
