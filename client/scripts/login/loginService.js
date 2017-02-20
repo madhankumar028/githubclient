@@ -15,7 +15,7 @@
         function submit() {
 
             var options = {
-                url: __env.oAuth + "?" + "client_id=" + __env.clientId + "&" + "redirect_uri=" + __env.redirectUri,
+                url: __env.oAuth + "?" + "client_id=" + __env.clientId + "/",
                 method: 'GET',
                 cache: false,
                 headers: {'content-type': 'application/json'}

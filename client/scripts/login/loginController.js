@@ -6,9 +6,9 @@
     .module('app.login', [])
     .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['__env', '$http', '$q', 'LoginService'];
+    LoginController.$inject = ['__env', '$http', '$q', 'LoginService', '$sce'];
 
-    function LoginController(__env, $http, $q, LoginService) {
+    function LoginController(__env, $http, $q, LoginService, $sce) {
         
         var self = this;
 
@@ -19,7 +19,7 @@
             var oAuthResponse = LoginService.submit();
 
             oAuthResponse.then(function(response) {
-                self.signupPage = response;
+                self.signupPage = $sce.trustAsHtml(response);
             });
         }
     }
