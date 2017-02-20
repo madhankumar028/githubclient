@@ -10,7 +10,6 @@
      */
     if (window) {
         Object.assign(env, window.___env);
-        console.log(env);
     }
 
     /**
