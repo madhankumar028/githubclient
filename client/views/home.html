@@ -29,8 +29,9 @@
 </div>
 <div class="content">
     <form class="search" name="searchForm" ng-submit="HomeCtrl.getUserData(userName)">
-        <input type="text" id="value" class="input" list="userList" ng-model="userName" placeholder="Search Github users ..." />
-        <datalist id="userList"></datalist>
+        <input type="text" id="value" class="form-control input" list="userList" ng-model="userName"
+        placeholder="Search Github users ..." typeahead="user for user in users | filter:$viewValue |
+        limitTo:8"/>
     </form>
     <div class="resumeReporter">
         <div class="repo_details">

@@ -21,7 +21,7 @@
     angular.module('app', [
 
                     'ui.router',
-                    'ngSanitize',
+                    'ui.bootstrap',
 
                     /* Features */
                     'app.login',
@@ -73,9 +73,6 @@
         });
         
         // Default Route
-        // $urlRouterProvider.otherwise('/login');
-
-        // Production url
         $urlRouterProvider.otherwise('/profile');
 
         $httpProvider.interceptors.push('httpInterceptor');
