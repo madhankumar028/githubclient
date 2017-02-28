@@ -17,7 +17,11 @@
         self.repo = getUserRepo;
         self.error = false;
         self.getUserData = getUserData;
+        self.getUsersBasedOnKeystrokes = getUsersBasedOnKeystrokes;
 
+        /**
+         * @public 
+         */
         function getUserData(userName) {
             if(!userName){
                 self.error = true;
@@ -27,18 +31,32 @@
             userData(userName);
         }
 
+        /**
+         * @private
+         */
         function getAllUser() {
             var users = HomeService.getAllUser();
             users.then(function (response) {
-                var options = '';
-                for(var i = 0; i < response.length; i++) {
-                    options += '<option value="'+response[i].login+'" />';
-                    document.getElementById('userList').innerHTML = options;
-                }
+                var users = [];
+                response.forEach(function(user) {
+                    users.push(user);
+                });
             });
         }
 
-        getAllUser();
+        /**
+         * @private init
+         */
+        function init() {
+            getAllUser();
+        }
+
+        /**
+         * @public getUsers based on keystroke
+         */
+         function getUsersBasedOnKeystrokes() {
+            var users = HomeService.getAllUser();
+         }
 
         function userData(userName) {
             var userDetails = HomeService.getUserDetails(userName);
@@ -54,5 +72,7 @@
                 self.repo = response;
             });
         }
+
+        init();
     }
 }());

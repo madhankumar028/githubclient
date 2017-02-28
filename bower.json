@@ -10,7 +10,8 @@
   "dependencies": {
     "angular": "1.6.0",
     "angular-ui-router": "0.2.13",
-    "bootstrap": "3.3.4"
+    "bootstrap": "3.3.4",
+    "angular-bootstrap": "0.12.1"
   },
   "ignore": [
     "**/.*",
