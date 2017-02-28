@@ -17,7 +17,8 @@
         self.repo = getUserRepo;
         self.error = false;
         self.getUserData = getUserData;
-        self.getUsersBasedOnKeystrokes = getUsersBasedOnKeystrokes;
+        self.users = [];
+        // self.getUsersBasedOnKeystrokes = getUsersBasedOnKeystrokes;
 
         /**
          * @public 
@@ -35,11 +36,12 @@
          * @private
          */
         function getAllUser() {
-            var users = HomeService.getAllUser();
-            users.then(function (response) {
-                var users = [];
+            
+            var res = HomeService.getAllUser();
+            
+            res.then(function (response) {
                 response.forEach(function(user) {
-                    users.push(user);
+                    self.users.push(user.login);
                 });
             });
         }
@@ -49,14 +51,20 @@
          */
         function init() {
             getAllUser();
+            // getUsersBasedOnKeystrokes();
         }
 
         /**
          * @public getUsers based on keystroke
+         * TODO service call for every keystrokes
+         * to match the user input to auto complete
          */
-         function getUsersBasedOnKeystrokes() {
-            var users = HomeService.getAllUser();
-         }
+        //  function getUsersBasedOnKeystrokes() {
+        //     var res = HomeService.getAllUser();
+        //     res.then(function(response) {
+        //         self.users.push(user.login);
+        //     });
+        //  }
 
         function userData(userName) {
             var userDetails = HomeService.getUserDetails(userName);
