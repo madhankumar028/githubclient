@@ -19,7 +19,7 @@
             var oAuthResponse = LoginService.submit();
 
             oAuthResponse.then(function(response) {
-                self.signupPage = $sce.trustAsHtml(response);
+                // self.signupPage = $sce.trustAsHtml(response);
             });
         }
     }

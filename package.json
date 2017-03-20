@@ -19,10 +19,13 @@
   },
   "homepage": "https://github.com/madhankumar028/githubclient#readme",
   "dependencies": {
-      "express": "latest"
+    "express": "latest"
   },
   "devDependencies": {
+    "body-parser": "^1.17.1",
+    "express": "latest",
     "lite-server": "^2.2.2",
-    "express": "latest"
+    "passport": "^0.3.2",
+    "passport-github": "^1.1.0"
   }
 }
