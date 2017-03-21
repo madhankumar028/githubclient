@@ -5,13 +5,13 @@
         <title>GithubClient</title>
         <base href="/">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="asset/style.css">
-        <link rel="icon" href="asset/fav-icon.ico" type="image/gif">
+        <link rel="stylesheet" href="client/asset/style.css">
+        <link rel="icon" href="client/asset/fav-icon.ico" type="image/gif">
     </head>
     <body ng-app="app">
         <div ui-view></div>
         <div id="loaderDiv" loader>
-            <img src="asset/ajax-loader.gif" class="ajax-loader"/>
+            <!--<img src="asset/ajax-loader.gif" class="ajax-loader"/>-->
         </div>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
@@ -21,14 +21,14 @@
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.6.2/angular-sanitize.js"></script>
 
-        <script src="scripts/env.js"></script>
+        <script src="client/scripts/env.js"></script>
 
-        <script src="scripts/app.module.js"></script>
-        <script src="scripts/interceptor.js"></script>
-        <script src="scripts/common/directive/loader.js"></script>
-        <script src="scripts/login/loginController.js"></script>
-        <script src="scripts/login/loginService.js"></script>
-        <script src="scripts/home/homeController.js"></script>
-        <script src="scripts/home/homeService.js"></script>
+        <script src="client/scripts/app.module.js"></script>
+        <script src="client/scripts/interceptor.js"></script>
+        <script src="client/scripts/common/directive/loader.js"></script>
+        <script src="client/scripts/login/loginController.js"></script>
+        <script src="client/scripts/login/loginService.js"></script>
+        <script src="client/scripts/home/homeController.js"></script>
+        <script src="client/scripts/home/homeService.js"></script>
     </body>
 </html>

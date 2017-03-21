@@ -1,5 +1,0 @@
-{
-    "files" : "./client/scripts/**/*.js, ./client/views/*.{html}, index.html",
-    "server" : { "baseDir" : "./client" },
-    "browser" : ["chrome"]
-}

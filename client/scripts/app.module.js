@@ -54,7 +54,7 @@
         .state('home', {
             name: 'profile',
             url: '/profile',
-            templateUrl: 'views/home.html',
+            templateUrl: 'client/views/dashboard.html',
             controller: 'HomeController as HomeCtrl',
             resolve: {
                 getDefaultUser: function (HomeService, __env) {
