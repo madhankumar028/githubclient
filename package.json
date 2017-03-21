@@ -4,8 +4,10 @@
   "description": "github client to search github users",
   "main": "server.js",
   "scripts": {
-    "dev": "lite-server",
-    "start": "node server.js"
+    "dev": "concurrently -k \"lite-server\" \"npm run watch-css\"",
+    "start": "node server.js",
+    "build-css": "node-sass --include-path scss scss/main.scss   client/asset/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "repository": {
     "type": "git",
@@ -19,10 +21,13 @@
   },
   "homepage": "https://github.com/madhankumar028/githubclient#readme",
   "dependencies": {
-      "express": "latest"
+    "express": "latest"
   },
   "devDependencies": {
+    "concurrently": "^3.4.0",
+    "express": "latest",
     "lite-server": "^2.2.2",
-    "express": "latest"
+    "node-sass": "^4.5.0",
+    "nodemon": "^1.11.0"
   }
 }
